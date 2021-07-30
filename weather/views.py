@@ -11,7 +11,7 @@ def index2(request):
 
 
 def index(request):
-    if request.method == 'POST':
+    if request.method == 'GET' or request.method == 'POST':
         city = request.POST['city']
         source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' +
                     city + '&units=metric&appid=33e29300b01a9e8984fd89c44a5b99ad').read()
@@ -27,7 +27,6 @@ def index(request):
             'description': str(list_of_data['weather'][0]['description']),
             'icon': list_of_data['weather'][0]['icon'],
         }
-        print(data)
     else:
         data = {}
     return render(request, "index.html", data)
