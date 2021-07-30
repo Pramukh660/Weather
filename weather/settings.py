@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$wa79*1k^!=^mfhe5penx!1hch2p-$=7tag8s*w2ek^i-*f&br
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['waether-api.herokuapp.com']
 
 
 # Application definition
