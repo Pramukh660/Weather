@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$wa79*1k^!=^mfhe5penx!1hch2p-$=7tag8s*w2ek^i-*f&br
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['waether-api.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['pyweather.pythonanywhere.com', '*']
 
 # Application definition
 
@@ -119,8 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
-MEDIA_URL = '/static/images/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+MEDIA_URL = '/images/'
 
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),
