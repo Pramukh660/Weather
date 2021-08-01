@@ -13,6 +13,8 @@ def index2(request):
 def index(request):
     if request.method == 'POST':
         city = request.POST['city']
+        if city == 'banglore' or city == 'Banglore' or city == 'bangalore' or city == 'Bangalore':
+            city = 'bengaluru'
         source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' +
                     city + '&units=metric&appid=33e29300b01a9e8984fd89c44a5b99ad').read()
         list_of_data = json.loads(source)
