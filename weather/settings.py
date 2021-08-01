@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,7 @@ ALLOWED_HOSTS = ['pyweather.pythonanywhere.com', '*']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_503',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,13 +76,24 @@ WSGI_APPLICATION = 'weather.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'd70kpnaima4suc',
+       'USER': 'dnrjfgxwebyxif',
+       'PASSWORD': '4e50834ee2980cba64dcf4ff9a19a3a7d06ad65456bfcc0686c4570530a8e72b',
+       'HOST': 'ec2-23-21-4-7.compute-1.amazonaws.com',
+       'URI': 'postgres://dnrjfgxwebyxif:4e50834ee2980cba64dcf4ff9a19a3a7d06ad65456bfcc0686c4570530a8e72b@ec2-23-21-4-7.compute-1.amazonaws.com:5432/d70kpnaima4suc',
+       'PORT': '5432',
+   }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -120,15 +133,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
-MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     # '/var/www/static/',
 ]
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TEST_RUNNER = 'django_heroku.HerokuDiscoverRunner'
+django_heroku.settings(locals())
