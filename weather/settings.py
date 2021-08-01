@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['pyweather.pythonanywhere.com', '*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django_503',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
