@@ -2,10 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import urllib.request
 import json
-from pandas import read_csv
-
-csv_file = read_csv('../city.csv')
-cities = csv_file['City'].tolist()
 
 def index1(request):
     return render(request, 'index.html')
