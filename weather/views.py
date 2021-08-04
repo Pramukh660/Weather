@@ -11,6 +11,8 @@ def index2(request):
 
 
 def index(request):
+    if request.method == 'GET':
+        return render(request, "index.html")
     if request.method == 'POST':
         city = request.POST['city']
         if city == 'banglore' or city == 'Banglore' or city == 'bangalore' or city == 'Bangalore':
