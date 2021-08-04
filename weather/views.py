@@ -11,8 +11,9 @@ def index2(request):
 
 
 def index(request):
-    data = {}
     if request.method == 'GET':
+        city = ''
+        data = {}
         return render(request, "index.html", data)
     if request.method == 'POST':
         city = request.POST['city']
