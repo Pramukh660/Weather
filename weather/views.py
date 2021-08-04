@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import urllib.request
 import json
+from pandas import read_csv
+
+csv_file = read_csv('../city.csv')
+cities = csv_file['City'].tolist()
 
 def index1(request):
     return render(request, 'index.html')
@@ -20,7 +24,7 @@ def index(request):
             "country_code": str(list_of_data['sys']['country']),
             "coordinate": str(list_of_data['coord']['lon']) + ', '+ str(list_of_data['coord']['lat']),
             "temp": str(list_of_data['main']['temp']) + ' °C',
-            "tmp_felling": str(list_of_data['main']['feels_like']) + ' °C',
+            "tmp_feeling": str(list_of_data['main']['feels_like']) + ' °C',
             "pressure": str(list_of_data['main']['pressure']),
             "humidity": str(list_of_data['main']['humidity']),
             'main': str(list_of_data['weather'][0]['main']),
