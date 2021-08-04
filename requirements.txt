@@ -6,3 +6,4 @@ sqlparse==0.4.1
 django-heroku
 psycopg2-binary==2.9.1
 whitenoise
+pandas
