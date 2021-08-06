@@ -22,7 +22,7 @@ def index(request):
             "temp": str(list_of_data['main']['temp']) + ' °C',
             "tmp_feeling": str(list_of_data['main']['feels_like']) + ' °C',
             "pressure": str(list_of_data['main']['pressure']),
-            "humidity": str(list_of_data['main']['humidity']),
+            "humidity": str(list_of_data['main']['humidity'])+ ' °C',
             'main': str(list_of_data['weather'][0]['main']),
             'description': str(list_of_data['weather'][0]['description']),
             'icon': list_of_data['weather'][0]['icon'],
