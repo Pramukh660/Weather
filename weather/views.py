@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, response
 import urllib.request
 import json
 
@@ -30,3 +30,8 @@ def index(request):
     else:
         data = {}
     return render(request, "index.html", data)
+
+def not404(request):
+     response = render(request, '404.html')
+     response.status_code = 404
+     return response

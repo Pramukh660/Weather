@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import handler404, handler500
 from django.contrib import admin
 from django.urls import path
 from . import views
@@ -26,3 +27,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     # path('', generic.TemplateView.as_view(template_name='index.html')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler500 = "weather.views.not404"
