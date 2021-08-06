@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 {% load static %}
 <!--Code By Webdevtrick ( https://webdevtrick.com )-->
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>City not found</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-  <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href={% static 'css/404.css' %} >
+    <meta charset="UTF-8">
+    <title>City not found</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href={% static 'css/404.css' %}>
 </head>
+
 <body>
-            <div class="error">
-                <div class="container-floud">
-                    <div class="col-xs-12 ground-color text-center">
-                        <div class="errorPage">
-                            <div class="clip"><div class="shadow"><span class="digit numberThree"></span></div></div>
-                            <div class="clip"><div class="shadow"><span class="digit numberTwo"></span></div></div>
-                            <div class="clip"><div class="shadow"><span class="digit numberOne"></span></div></div>
-                        </div>
-                        <h2>Sorry! city you currently entered is not found in our database. <br>Kindly Check check the spellings or enter another city.</h2>
-                        <a href= {% url 'index' %}><h2>Go back</h2></a>
+    <div class="error">
+        <div class="container-floud">
+            <div class="col-xs-12 ground-color text-center">
+                <div class="errorPage">
+                    <div class="clip">
+                        <div class="shadow"><span class="digit numberThree"></span></div>
                     </div>
-                    
+                    <div class="clip">
+                        <div class="shadow"><span class="digit numberTwo"></span></div>
+                    </div>
+                    <div class="clip">
+                        <div class="shadow"><span class="digit numberOne"></span></div>
+                    </div>
                 </div>
+                <h2>Sorry! city you currently entered is not found in our database. <br>Kindly Check check the spellings
+                    or enter another city.</h2>
+                <a href={% url 'index' %}>
+                    <h2><u>Go back</u></h2>
+                </a>
             </div>
 
-<script  src={% static 'js/404.js' %}></script>
+        </div>
+    </div>
+
+    <script src={% static 'js/404.js' %}></script>
 
 </body>
+
 </html>
